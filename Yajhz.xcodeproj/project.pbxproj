@@ -14,6 +14,9 @@
 		04DD4F072B02D9560018077C /* Yajhz.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04DD4F052B02D9560018077C /* Yajhz.xcdatamodeld */; };
 		04DD4F092B02D9580018077C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DD4F082B02D9580018077C /* Assets.xcassets */; };
 		04DD4F0C2B02D9580018077C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DD4F0A2B02D9580018077C /* LaunchScreen.storyboard */; };
+		04DD4F162B02F01F0018077C /* SignUp_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD4F152B02F01F0018077C /* SignUp_VC.swift */; };
+		04DD4F1A2B02FBD80018077C /* SignIn_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD4F192B02FBD80018077C /* SignIn_VC.swift */; };
+		4CF928D2F667D2D61BBF8A9B /* Pods_Yajhz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EE4C3B60CB6CF161265E13 /* Pods_Yajhz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,11 @@
 		04DD4F082B02D9580018077C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04DD4F0B2B02D9580018077C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DD4F0D2B02D9580018077C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04DD4F152B02F01F0018077C /* SignUp_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp_VC.swift; sourceTree = "<group>"; };
+		04DD4F192B02FBD80018077C /* SignIn_VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn_VC.swift; sourceTree = "<group>"; };
+		20EE4C3B60CB6CF161265E13 /* Pods_Yajhz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yajhz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46BFB0BAE9441CF23873572C /* Pods-Yajhz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yajhz.debug.xcconfig"; path = "Target Support Files/Pods-Yajhz/Pods-Yajhz.debug.xcconfig"; sourceTree = "<group>"; };
+		9790F70FA95BF21E8DDFB62D /* Pods-Yajhz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yajhz.release.xcconfig"; path = "Target Support Files/Pods-Yajhz/Pods-Yajhz.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF928D2F667D2D61BBF8A9B /* Pods_Yajhz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +53,8 @@
 			children = (
 				04DD4EFB2B02D9560018077C /* Yajhz */,
 				04DD4EFA2B02D9560018077C /* Products */,
+				A5F6DC38FD70C9DA5EEE9BD9 /* Pods */,
+				B47C28C450BE7C1F6D537098 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +69,8 @@
 		04DD4EFB2B02D9560018077C /* Yajhz */ = {
 			isa = PBXGroup;
 			children = (
+				04DD4F172B02FBA40018077C /* SignIn */,
+				04DD4F132B02DBCF0018077C /* SignUp */,
 				04DD4EFC2B02D9560018077C /* AppDelegate.swift */,
 				04DD4EFE2B02D9560018077C /* SceneDelegate.swift */,
 				04DD4F002B02D9560018077C /* ViewController.swift */,
@@ -70,6 +83,55 @@
 			path = Yajhz;
 			sourceTree = "<group>";
 		};
+		04DD4F132B02DBCF0018077C /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				04DD4F142B02DC070018077C /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		04DD4F142B02DC070018077C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04DD4F152B02F01F0018077C /* SignUp_VC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		04DD4F172B02FBA40018077C /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				04DD4F182B02FBB60018077C /* View */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		04DD4F182B02FBB60018077C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04DD4F192B02FBD80018077C /* SignIn_VC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5F6DC38FD70C9DA5EEE9BD9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46BFB0BAE9441CF23873572C /* Pods-Yajhz.debug.xcconfig */,
+				9790F70FA95BF21E8DDFB62D /* Pods-Yajhz.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B47C28C450BE7C1F6D537098 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20EE4C3B60CB6CF161265E13 /* Pods_Yajhz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04DD4F102B02D9580018077C /* Build configuration list for PBXNativeTarget "Yajhz" */;
 			buildPhases = (
+				BB758F16D396A673EE989DA6 /* [CP] Check Pods Manifest.lock */,
 				04DD4EF52B02D9560018077C /* Sources */,
 				04DD4EF62B02D9560018077C /* Frameworks */,
 				04DD4EF72B02D9560018077C /* Resources */,
+				4D76688557E72C5E690073A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,12 +200,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4D76688557E72C5E690073A2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yajhz/Pods-Yajhz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Yajhz/Pods-Yajhz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yajhz/Pods-Yajhz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB758F16D396A673EE989DA6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Yajhz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04DD4EF52B02D9560018077C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DD4F162B02F01F0018077C /* SignUp_VC.swift in Sources */,
 				04DD4F072B02D9560018077C /* Yajhz.xcdatamodeld in Sources */,
+				04DD4F1A2B02FBD80018077C /* SignIn_VC.swift in Sources */,
 				04DD4F012B02D9560018077C /* ViewController.swift in Sources */,
 				04DD4EFD2B02D9560018077C /* AppDelegate.swift in Sources */,
 				04DD4EFF2B02D9560018077C /* SceneDelegate.swift in Sources */,
@@ -286,6 +394,7 @@
 		};
 		04DD4F112B02D9580018077C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46BFB0BAE9441CF23873572C /* Pods-Yajhz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -313,6 +422,7 @@
 		};
 		04DD4F122B02D9580018077C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9790F70FA95BF21E8DDFB62D /* Pods-Yajhz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
