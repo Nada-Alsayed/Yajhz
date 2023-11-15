@@ -43,7 +43,7 @@ struct Category: Codable {
         case nameEn = "name_en"
     }
 }
-// MARK: - ResponseCategory
+// MARK: - ResponsePopular
 class ResponsePopular: Codable {
     let success: Bool
     let responseCode: Int

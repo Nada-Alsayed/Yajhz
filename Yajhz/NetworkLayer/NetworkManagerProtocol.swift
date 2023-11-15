@@ -9,7 +9,6 @@ import Foundation
 
 protocol NetworkManagerProtocol{
     
-    func postMethod(object: Cleint, url: URL, completionHandler: @escaping (Bool) -> Void)
-    
+    func postMethod<T:Codable>(object: Cleint, url: URL, completionHandler: @escaping (T?,Error?) -> ()) 
     func fetchData<T:Codable>(url:URL,complition : @escaping (T?,Error?) -> () )
 }
