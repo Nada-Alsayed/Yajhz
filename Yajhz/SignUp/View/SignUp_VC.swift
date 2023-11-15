@@ -29,6 +29,8 @@ class SignUp_VC: UIViewController {
     
     @IBOutlet weak var loginLabel: UILabel!
     
+    var viewModel = SignUPViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setDesignConfig()
@@ -41,6 +43,7 @@ class SignUp_VC: UIViewController {
     //MARK: - IBActions
     
     @IBAction func signUpBtn(_ sender: Any) {
+        createCleint()
     }
     
     //MARK: - Methods
@@ -85,5 +88,29 @@ class SignUp_VC: UIViewController {
         let signInVC = self.storyboard?.instantiateViewController(withIdentifier: "SignIn_VC") as! SignIn_VC
         signInVC.modalPresentationStyle = .fullScreen
         present(signInVC, animated: true, completion: nil)
+    }
+    
+    func createCleint(){
+        let password = passwordTF.text
+        let confirmPassword = confirmPasswordTF.text
+        let email = emailTF.text
+        let userName = userNameTF.text
+        let phone = phoneTF.text
+        
+        if !(password?.isEmpty ?? true) &&
+        !(confirmPassword?.isEmpty ?? true) &&
+        !(email?.isEmpty ?? true) &&
+        !(userName?.isEmpty ?? true) &&
+        !(phone?.isEmpty ?? true) {
+            if (password == confirmPassword ){
+                var cleint = Cleint(name: userName!, email: email!, phone: phone!,password: password!, image: "")
+                viewModel.addClient(cleint: cleint)
+            }else{
+                print("p and CP don't match")
+            }
+        }else{
+            print("Fill records")
+            
+        }
     }
 }
