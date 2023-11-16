@@ -88,7 +88,7 @@ class SignIn_VC: UIViewController {
         
         if !(password?.isEmpty ?? true) &&
         !(email?.isEmpty ?? true) {
-                var cleint = Cleint(name:"", email: email!, phone: "",password: password!, image: "")
+            let cleint = User(email: email!,password: password!)
                 viewModel.isClientExist(cleint: cleint,controller: self)
         }else{
             AlertCreator().showToast(controller: self, message:"Please enter all fields", seconds: 2)

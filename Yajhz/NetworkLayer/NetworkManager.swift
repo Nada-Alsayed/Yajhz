@@ -18,45 +18,38 @@ class NetworkManager : NetworkManagerProtocol {
 
     
     //MARK: - Methods
-    func postMethod<T: Codable>(object: Cleint, url: URL, completionHandler: @escaping (T?, Error?) -> ()) {
-        print("xxxxx")
-
-        let parameters: [String: String] = [
+    func postMethod(object: User, url: URL, completionHandler: @escaping (ResponseClient?, Error?) -> ()) {
+        print(object)
+        let parameters: [String: String?] = [
             "name": object.name,
             "email": object.email,
             "password": object.password,
             "phone": object.phone,
-            "device_token": ""
+            "device_token": "12233454566787877"
         ]
 
         AF.request(url, method: .post, parameters: parameters, headers: headers)
-            .validate() // Ensure response status code is in the 2xx range
-            .responseJSON { response in
-                switch response.result {
-                case .success(let data):
-                    do {
-                        // Ensure 'data' is of type Data
-                        guard let jsonData = try? JSONSerialization.data(withJSONObject: data) else {
-                            throw NSError(domain: "", code: 1, userInfo: nil)
-                        }
-
-                        let decodedData = try JSONDecoder().decode(T.self, from: jsonData)
-                        completionHandler(decodedData, nil)
-                    } catch {
-                        print("catch " + error.localizedDescription)
-                        completionHandler(nil, error)
-                    }
-
-                case .failure(let error):
-                    print("fail " + error.localizedDescription)
-                    completionHandler(nil, error)
+        .validate(statusCode: 200..<300)  // Ensure status code is within the success range
+            .response { response in
+              switch response.result {
+              case .success(let data):
+                do {
+                    let result = try JSONDecoder().decode(ResponseClient.self,from: data!)
+                    completionHandler(result,nil)
+                } catch {
+                    print("Error: Trying to convert JSON data to string")
                 }
-        }
+                case.failure(let error):
+                print(error.localizedDescription)
+                    completionHandler(nil,error)
+                }
+            }
     }
 
     func fetchData<T:Codable>(url:URL,complition : @escaping (T?,Error?) -> () ){
                     
-        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers, interceptor: nil).response { response in
+        AF.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: headers, interceptor: nil)
+            .response { response in
             switch response.result{
             case .success(let data):
               do{

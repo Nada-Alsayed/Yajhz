@@ -96,8 +96,7 @@ class SignUp_VC: UIViewController {
         !(userName?.isEmpty ?? true) &&
         !(phone?.isEmpty ?? true) {
             if (password == confirmPassword ){
-                var cleint = Cleint(name: userName!, email: email!, phone: phone!,password: password!, image: "")
-                
+                let cleint = User(name: userName!, email: email!, password: password!, phone: phone!)
                 viewModel.addClient(cleint: cleint,controller: self)
             }else{
                // print("p and CP don't match")
