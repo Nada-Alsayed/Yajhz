@@ -29,7 +29,7 @@ class NetworkManager : NetworkManagerProtocol {
         ]
 
         AF.request(url, method: .post, parameters: parameters, headers: headers)
-        .validate(statusCode: 200..<300)  // Ensure status code is within the success range
+        .validate(statusCode: 200..<300)
             .response { response in
               switch response.result {
               case .success(let data):
@@ -67,48 +67,3 @@ class NetworkManager : NetworkManagerProtocol {
     
 }
 
-
-//func postMethod(object: Cleint, url: URL, completionHandler: @escaping (Bool, String?, String?) -> Void) {
-//        print("xxxxx")
-//        let parameters: [String: String] = [
-//            "name": object.name,
-//            "email": object.email,
-//            "password": object.password,
-//            "phone": object.phone,
-//            "device_token": ""
-//        ]
-//
-//        AF.request(url, method: .post, parameters: parameters, headers: headers)
-//            .validate(statusCode: 200..<300)  // Ensure status code is within the success range
-//            .responseJSON { response in
-//                switch response.result {
-//                case .success(let value):
-//                    if let json = value as? [String: Any] {
-//                        let success = json["success"] as? Bool ?? false
-//                        let message = json["message"] as? String ?? "Unknown error"
-//                        guard let data = json["data"] as? [String: Any],
-//                           let name = data["name"] as? String  else {
-//                            print("Error accessing 'name' field.")
-//                            return
-//                        }
-//                        completionHandler(success, message, name)
-//                    } else {
-//                        completionHandler(false, "Invalid response format","No data")
-//                    }
-//                case .failure(let error):
-//                    if let statusCode = response.response?.statusCode {
-//                        print("Error: Status Code \(statusCode)")
-//                        if let data = response.data {
-//                            let errorMessage = String(data: data, encoding: .utf8)
-//                            print("Error Data: \(errorMessage ?? "No error data")")
-//                            completionHandler(false, errorMessage,"")
-//                        } else {
-//                            completionHandler(false, "Unknown error","")
-//                        }
-//                    } else {
-//                        print("Error Description: \(error)")
-//                        completionHandler(false, "Unknown error","")
-//                    }
-//                }
-//            }
-//    }

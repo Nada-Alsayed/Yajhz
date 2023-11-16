@@ -43,6 +43,7 @@ struct Category: Codable {
         case nameEn = "name_en"
     }
 }
+
 // MARK: - ResponsePopular
 class ResponsePopular: Codable {
     let success: Bool
@@ -56,7 +57,8 @@ class ResponsePopular: Codable {
         case message, data
     }
 }
-// MARK: - Datum
+
+// MARK: - Popular
 struct Popular: Codable {
     let id: Int
     let name, email, phone: String

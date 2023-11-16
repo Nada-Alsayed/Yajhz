@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - User
 struct User : Codable{
     let name, email, phone: String
     let password: String
@@ -26,7 +27,6 @@ struct User : Codable{
     }
     
 }
-
 
 // MARK: - ResponseSignIn
 struct ResponseClient: Codable {

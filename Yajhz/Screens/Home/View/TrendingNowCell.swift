@@ -10,15 +10,14 @@ import UIKit
 class TrendingNowCell: UICollectionViewCell {
     
     //MARK: - IBOutlets
-    
     @IBOutlet weak var bg_view: UIView!
     @IBOutlet weak var img: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-
     }
+    
     func setupUI(){
         // Apply corner radius
         bg_view.layer.cornerRadius = 20

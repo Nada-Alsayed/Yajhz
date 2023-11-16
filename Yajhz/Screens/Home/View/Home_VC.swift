@@ -32,7 +32,7 @@ class Home_VC: UIViewController {
         bindResturants()
     }
     
-    
+    //MARK: - IBActions
     @IBAction func signOut(_ sender: Any) {
         AlertCreator().showAlertWithAction(title: "Alert!", titleAction: "Signout", titleNoAction: "No", message: "Are you sure you want to signout? ", viewController: self) {
             
@@ -45,14 +45,6 @@ class Home_VC: UIViewController {
         }
     }
     
-    func setUserName(){
-        if let retrievedString = UserDefaults.standard.string(forKey: ConstantsStrings.USER_NAME) {
-            print("Retrieved String: \(retrievedString)")
-            helloLabel.text = "Hello " + retrievedString
-        } else {
-            print("No value found for key 'myStringKey'")
-        }
-    }
     //MARK: - Mrthods
     func setCellsConfigurations(){
         categoriesCollectionView.delegate = self
@@ -93,8 +85,18 @@ class Home_VC: UIViewController {
         }
         viewModel.getData(url: URLCreator().getPopular())
     }
+    
+    func setUserName(){
+        if let retrievedString = UserDefaults.standard.string(forKey: ConstantsStrings.USER_NAME) {
+            print("Retrieved String: \(retrievedString)")
+            helloLabel.text = "Hello " + retrievedString
+        } else {
+            print("No value found for key 'myStringKey'")
+        }
+    }
 }
 
+//MARK: - Extension to implemment coolectionView functions
 extension Home_VC : UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

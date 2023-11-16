@@ -10,7 +10,6 @@ import UIKit
 class SignUp_VC: UIViewController {
     
     //MARK: - IBOutlet
-
     @IBOutlet weak var signUpView: UIView!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var img_bg: UIImageView!
@@ -34,7 +33,6 @@ class SignUp_VC: UIViewController {
     }
     
     //MARK: - IBActions
-    
     @IBAction func signUpBtn(_ sender: Any) {
         createCleint()
     }
@@ -99,11 +97,9 @@ class SignUp_VC: UIViewController {
                 let cleint = User(name: userName!, email: email!, password: password!, phone: phone!)
                 viewModel.addClient(cleint: cleint,controller: self)
             }else{
-               // print("p and CP don't match")
                 AlertCreator().showToast(controller: self, message: "The password and the confirm password don't match", seconds: 2)
             }
         }else{
-           // print("Please enter all fields")
             AlertCreator().showToast(controller: self, message:"Please enter all fields", seconds: 2)
         }
     }

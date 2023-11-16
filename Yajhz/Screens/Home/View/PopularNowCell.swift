@@ -26,7 +26,6 @@ class PopularNowCell: UICollectionViewCell {
     }
     
     //MARK: - Methods
-
     func setupUI(){
         // Apply corner radius
         img.layer.cornerRadius = 20

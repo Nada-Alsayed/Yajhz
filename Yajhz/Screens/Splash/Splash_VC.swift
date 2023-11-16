@@ -15,6 +15,7 @@ class Splash_VC: UIViewController {
         
     }
     
+    //MARK: - Methods
    @objc func navigate() {
        // Check if the user is logged in
        if !isLoggedIn().isEmpty {
